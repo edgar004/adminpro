@@ -9,13 +9,15 @@ import { SharedModule } from '../shared/Shared.module';
 import { FormsModule } from '@angular/forms';
 import { IncrementadorComponent } from './../components/incrementador/incrementador.component';
 import { ChartsModule } from 'ng2-charts';
+import { GraficoDonaComponent } from './../components/grafico-dona/grafico-dona.component';
 @NgModule({
   declarations: [
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
     PagesComponent,
-    IncrementadorComponent
+    IncrementadorComponent,
+    GraficoDonaComponent
   
   ],
   exports:[

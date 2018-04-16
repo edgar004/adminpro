@@ -21,6 +21,8 @@ import { PagesModule } from './pages/pages.module';
     RegisterComponent,
     
   
+    
+  
 
   ],
   imports: [
