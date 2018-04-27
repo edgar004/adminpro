@@ -8,7 +8,7 @@ import { Title,Meta,MetaDefinition } from '@angular/platform-browser';
   styles: []
 })
 export class BreadcrumbsComponent implements OnInit {
-label:String =''
+label:any =''
   constructor(private router:Router,private title:Title,public meta:Meta) { 
 
   	this.getData().subscribe(event=>{
@@ -17,12 +17,12 @@ label:String =''
 
            let metaTag:MetaDefinition={
            	name:'description',
-           	content:this.label.toString()
+           	content:this.label
            	
 
            }
 
-  		this.title.setTitle(this.label.toString())
+  		this.title.setTitle(this.label)
   		this.meta.updateTag(metaTag)
 
   	})
