@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 
+
 // modulos
 import { PagesModule } from './pages/pages.module';
 //servicio
@@ -18,13 +19,7 @@ import { ServiceModule } from './services/service.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    
-  
     RegisterComponent,
-    
-  
-    
-  
 
   ],
   imports: [

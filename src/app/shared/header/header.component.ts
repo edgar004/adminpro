@@ -6,10 +6,14 @@ import { UsuarioService } from '../../services/service.index';
   styles: []
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private _usu:UsuarioService) { }
+USUARIO:any
+  constructor(private _usu:UsuarioService) { 
+  	this._usu.cargarStorare()
+  }
 
   ngOnInit() {
+  	this.USUARIO=this._usu.usuario
+
   }
 
   

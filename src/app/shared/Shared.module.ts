@@ -6,21 +6,33 @@ import { NopagefoundComponent } from './../shared/nopagefound/nopagefound.compon
 import { HeaderComponent } from './../shared/header/header.component';
 import { SidebarComponent } from './../shared/sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './../shared/breadcrumbs/breadcrumbs.component';
+import { PipesModule } from '../pipes/pipes.module';
 @NgModule({
   imports:[
-  RouterModule,
-  CommonModule
+
+      RouterModule,
+      CommonModule,
+      PipesModule
+  
   ],
+
+
   declarations: [
-  NopagefoundComponent,
-    HeaderComponent,
-    SidebarComponent,
-    BreadcrumbsComponent],
+   
+      NopagefoundComponent,
+      HeaderComponent,
+      SidebarComponent,
+      BreadcrumbsComponent
+   ],
+
   exports:[
-  NopagefoundComponent,
-    HeaderComponent,
-    SidebarComponent,
-    BreadcrumbsComponent],
+      
+      NopagefoundComponent,
+      HeaderComponent,
+      SidebarComponent,
+      BreadcrumbsComponent
+
+    ],
 })
 
 export class SharedModule { }

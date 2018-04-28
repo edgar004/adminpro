@@ -13,6 +13,9 @@ import { GraficoDonaComponent } from './../components/grafico-dona/grafico-dona.
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -23,7 +26,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     GraficoDonaComponent,
     AccoutSettingsComponent,
     PromesasComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
   
   ],
   exports:[
@@ -35,7 +39,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     SharedModule,
     PAGUES_ROUTES,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    PipesModule,
+    CommonModule
 
     ]
 })

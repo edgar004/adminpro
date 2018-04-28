@@ -7,15 +7,16 @@ import { UsuarioService } from '../../services/service.index';
   styles: []
 })
 export class SidebarComponent implements OnInit {
-
+usuario:any
   constructor(private _sidebar:SidebarService,private _usu:UsuarioService) {
 
 
-
+  	this._usu.cargarStorare()
 
    }
 
   ngOnInit() {
+  	this.usuario=this._usu.usuario
   }
 
 }

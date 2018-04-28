@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICES } from '../../config/config';
+import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 import { Router } from '@angular/router';
 import   'rxjs/add/operator/map';
 import Swal from 'sweetalert2'
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2'
 export class UsuarioService {
 usuario:Usuario
 token:string
-  constructor(private _http:HttpClient,private _router:Router) {
+  constructor(private _http:HttpClient,private _router:Router,private _subir:SubirArchivoService) {
   	
    }
    guardarStorage(id:string,token:string,usuario:Usuario){
@@ -74,5 +75,32 @@ logout(){
 
 
    }
+
+   actuazarUsuario(usuario:Usuario){
+       let url=`${URL_SERVICES}/usuario/${usuario._id}`
+       url+='?token='+this.token
+       return this._http.put(url,usuario)
+       .map((res:any)=>{
+          this.guardarStorage(res._id,this.token,res.usuario)
+          Swal("Usuario actualizado " , res.usuario.nombre,'success')
+          return true
+
+       })
+   }
+
+
+    cambiarImagen(archivo:File,id:string){
+    this._subir.subirArchivo(archivo,'usuarios',id)
+    .then((rep:any)=>{
+      this.usuario.img=rep.usuarioActualizado.img
+      Swal('Imagen actualizada',this.usuario.nombre,'success')
+      this.guardarStorage(rep._id,this.token,this.usuario)
+    
+
+    }).catch(rep=>{
+    })
+
+  }
+
 
 }
