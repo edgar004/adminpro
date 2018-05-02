@@ -81,7 +81,10 @@ logout(){
        url+='?token='+this.token
        return this._http.put(url,usuario)
        .map((res:any)=>{
-          this.guardarStorage(res._id,this.token,res.usuario)
+         if(this.usuario._id==this.usuario._id){
+           this.guardarStorage(res._id,this.token,res.usuario)
+         }
+          
           Swal("Usuario actualizado " , res.usuario.nombre,'success')
           return true
 
@@ -99,6 +102,29 @@ logout(){
 
     }).catch(rep=>{
     })
+
+  }
+
+
+  cargarUsuarios(desde:number=0){
+    let url=URL_SERVICES+'/usuario?desde='+desde
+    return this._http.get(url)
+
+  }
+
+
+  buscarUsuarios(termino:string){
+
+      let url=URL_SERVICES+'/busqueda/coleccion/usuario/'+termino
+
+      return this._http.get(url)
+      .map((resp:any)=>resp.usuario)
+
+  }
+
+  borrarUsuario(id:string){
+    let url=URL_SERVICES+ '/usuario/' +id+ '?token=' +this.token
+    return this._http.delete(url)
 
   }
 

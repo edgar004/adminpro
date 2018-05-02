@@ -7,6 +7,7 @@ import { Graficas1Component } from './../pages/graficas1/graficas1.component';
 import { NopagefoundComponent } from './../shared/nopagefound/nopagefound.component';
 import { PagesComponent } from './../pages/pages.component';
 import { AccoutSettingsComponent } from './../pages/accout-settings/accout-settings.component';
+import { UsuarioComponent } from './../pages/usuario/usuario.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
@@ -22,6 +23,8 @@ path:'',component:PagesComponent,canActivate:[LoginGuardGuard],children:[
 {path:'perfil',component:ProfileComponent,data:{titulo:'perfil de usuario'}},
 {path:'promesas',component:PromesasComponent,data:{titulo:'Promesas'}},
 {path:'rxjs',component:RxjsComponent,data:{titulo:'RxJs'}},
+//Mantenimiento
+{path:'usuarios',component:UsuarioComponent,data:{titulo:'Mantenimientos de usuarios'}},
  {path:'',redirectTo:'/dashboard',pathMatch:'full'},
 ]
 

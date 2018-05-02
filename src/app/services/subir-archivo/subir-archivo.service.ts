@@ -8,6 +8,9 @@ export class SubirArchivoService {
 
 
   subirArchivo(archivo:File, tipo:string,id:string){
+    console.log(archivo)
+    console.log(tipo)
+    console.log(id)
   	return new Promise((resolve,reject)=>{
 
   		let formData = new FormData()
