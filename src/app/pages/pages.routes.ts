@@ -8,10 +8,13 @@ import { NopagefoundComponent } from './../shared/nopagefound/nopagefound.compon
 import { PagesComponent } from './../pages/pages.component';
 import { AccoutSettingsComponent } from './../pages/accout-settings/accout-settings.component';
 import { UsuarioComponent } from './../pages/usuario/usuario.component';
+import { HospitalesComponent } from './../pages/hospitales/hospitales.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
 
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 import { ProfileComponent } from './profile/profile.component';
 const pagesRoutes:Routes=[
 {
@@ -25,7 +28,10 @@ path:'',component:PagesComponent,canActivate:[LoginGuardGuard],children:[
 {path:'rxjs',component:RxjsComponent,data:{titulo:'RxJs'}},
 //Mantenimiento
 {path:'usuarios',component:UsuarioComponent,data:{titulo:'Mantenimientos de usuarios'}},
- {path:'',redirectTo:'/dashboard',pathMatch:'full'},
+{path:'hospitales',component:HospitalesComponent,data:{titulo:'Mantenimientos de hospitales'}},
+{path:'medicos',component:MedicosComponent,data:{titulo:'Mantenimientos de medicos'}},
+{path:'medico/:id',component:MedicoComponent,data:{titulo:'Actualizar medicos'}},
+{path:'',redirectTo:'/dashboard',pathMatch:'full'},
 ]
 
 }

@@ -22,6 +22,7 @@ import { ServiceModule } from './services/service.module';
     RegisterComponent,
 
 
+
   ],
   imports: [
     BrowserModule,
