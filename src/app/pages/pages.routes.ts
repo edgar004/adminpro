@@ -12,10 +12,13 @@ import { HospitalesComponent } from './../pages/hospitales/hospitales.component'
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import {AdminGuard  } from '../services/service.index';
 
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { ProfileComponent } from './profile/profile.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+
 const pagesRoutes:Routes=[
 {
 path:'',component:PagesComponent,canActivate:[LoginGuardGuard],children:[
@@ -24,10 +27,13 @@ path:'',component:PagesComponent,canActivate:[LoginGuardGuard],children:[
 {path:'graficas1',component:Graficas1Component,data:{titulo:'Graficas'}},
 {path:'accout-settings',component:AccoutSettingsComponent,data:{titulo:'Ajuste de tema'}},
 {path:'perfil',component:ProfileComponent,data:{titulo:'perfil de usuario'}},
+{path:'busqueda/:termino',component:BusquedaComponent,data:{titulo:'Buscador'}},
 {path:'promesas',component:PromesasComponent,data:{titulo:'Promesas'}},
 {path:'rxjs',component:RxjsComponent,data:{titulo:'RxJs'}},
 //Mantenimiento
-{path:'usuarios',component:UsuarioComponent,data:{titulo:'Mantenimientos de usuarios'}},
+{path:'usuarios',component:UsuarioComponent,
+canActivate:[AdminGuard],
+data:{titulo:'Mantenimientos de usuarios'}},
 {path:'hospitales',component:HospitalesComponent,data:{titulo:'Mantenimientos de hospitales'}},
 {path:'medicos',component:MedicosComponent,data:{titulo:'Mantenimientos de medicos'}},
 {path:'medico/:id',component:MedicoComponent,data:{titulo:'Actualizar medicos'}},
